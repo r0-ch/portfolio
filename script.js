@@ -1,43 +1,73 @@
-const images = document.querySelectorAll('article:nth-child(1) .img');
-const descriptions = document.querySelectorAll('article:nth-child(1) .desc');
-const principalDesc = document.querySelector('article:nth-child(1) #principal-desc');
+const visualsImages = document.querySelectorAll('#visuals .img');
+const visualsDescriptions = document.querySelectorAll('#visuals .desc');
+const visualsPrincipalDesc = document.querySelector('#visuals #principal-desc');
+
+const websitesImages = document.querySelectorAll('#websites .img');
+const websitesDescriptions = document.querySelectorAll('#websites .desc');
+const websitesPrincipalDesc = document.querySelector('#websites #principal-desc');
+
+const presentationImage = document.querySelectorAll('#presentation .img');
+const presentationPrincipalDesc = document.querySelector('#presentation #principal-desc');
+
+
 const overlay = document.querySelector('#overlay');
 const overlayContent = document.querySelector('#overlay-content');
+const overlayBody = document.querySelector('#overlay-body');
 const closeOverlay = document.querySelector('#close-overlay');
 const overlayContainer = document.querySelector('#overlay-container');
 const slideLinkRight = document.querySelectorAll('.slide-link-right');
 const slideLinkLeft = document.querySelectorAll('.slide-link-left');
 const articles = document.querySelectorAll('article');
 
+function articleInteraction(images, descriptions, principalDesc) {
+    for (let i = 0; i < images.length; i++) {
 
-for (let i = 0; i < images.length; i++) {
+        if (descriptions) {
 
-    images[i].addEventListener('mouseover', () => {
-        descriptions[i].style.display = 'block';
-        principalDesc.style.display = 'none';
+            images[i].addEventListener('mouseover', () => {
+                descriptions[i].style.display = 'block';
+                principalDesc.style.display = 'none';
 
-        /*for (let image of images) {
-            image.style.opacity = '0.15';
-            images[i].style.opacity = '1';
-        }*/
+                /*for (let image of images) {
+                    image.style.opacity = '0.15';
+                    images[i].style.opacity = '1';
+                }*/
 
-    });
-    images[i].addEventListener('mouseout', () => {
-        descriptions[i].style.display = 'none';
-        principalDesc.style.display = 'block';
+            });
+            images[i].addEventListener('mouseout', () => {
+                descriptions[i].style.display = 'none';
+                principalDesc.style.display = 'block';
 
-        /*for (let image of images) {
-            image.style.opacity = '1';
-        }*/
-    });
+                /*for (let image of images) {
+                    image.style.opacity = '1';
+                }*/
+            });
 
-    images[i].addEventListener('click', () => {
-        overlay.style.display = 'block';
+            images[i].addEventListener('click', () => {
+                overlay.style.display = 'block';
 
-        overlayContent.src = images[i].dataset.url;
-        console.log(images[i].dataset.url)
-    })
+                overlayContent.src = images[i].dataset.url;
+                console.log(images[i].dataset.url);
+                overlayBody.textContent = descriptions[i].textContent;
+
+            })
+
+        } else {
+            images[i].addEventListener('click', () => {
+                overlay.style.display = 'block';
+
+                overlayContent.src = images[i].dataset.url;
+                console.log(images[i].dataset.url);
+                overlayBody.textContent = principalDesc.textContent;
+
+            })
+        }
+    }
 }
+
+articleInteraction(visualsImages, visualsDescriptions, visualsPrincipalDesc);
+articleInteraction(websitesImages, websitesDescriptions, websitesPrincipalDesc);
+articleInteraction(presentationImage, null, presentationPrincipalDesc);
 
 closeOverlay.addEventListener('click', () => {
     overlay.style.display = 'none';
@@ -110,8 +140,8 @@ function leftClick() {
 
     console.log(currentSlide);
 
-    displayTitle(currentSlide);  
-    displayBackground(currentSlide);  
+    displayTitle(currentSlide);
+    displayBackground(currentSlide);
 
 }
 
@@ -133,13 +163,13 @@ function displayTitle(currentSlide) {
 
     }
 
-} 
+}
 
 function displayBackground(currentSlide) {
 
     const images = ['360_F_260473171_GMr0ghneGQFDpdACcQKhetHe3FX2AUCG.jpg', 'beautiful-northern-light-background-free-vector.jpg', 'beautiful-northern-lights-background-free-vector.jpg', 'images.jpg']
 
-    document.getElementById('background').style = `background: url('./images/bg/${images[currentSlide-1]}') center no-repeat; background-size: cover; transition: 4s; opacity: 0.1`;
+    document.getElementById('background').style = `background: url('./images/bg/${images[currentSlide - 1]}') center no-repeat; background-size: cover; transition: 4s; opacity: 0.1`;
 
     console.log(images)
 }
