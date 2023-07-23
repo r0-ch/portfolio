@@ -8,6 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Russo+One&display=swap" rel="stylesheet">
     <script defer src="script.js"></script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 </head>
 
 <body>
@@ -253,15 +256,21 @@
         </div>
 
         <div class="article-nav-section article-section">
-            <a href="#" class="slide-link-left" onclick="leftClick()">
-                <i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>
-                <i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>
-            </a>
+            <div class="arrows">
+                <a href="#" class="slide-link-left" onclick="leftClick()">
+                    <i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>
+                </a>
 
-            <a href="#" class="slide-link-right" onclick="rightClick()">
-                <i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i>
-                <i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i>
-            </a>
+                <a href="#" class="slide-link-right" onclick="rightClick()">
+                    <i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i>
+                </a>
+            </div>
+
+            <div class="menu" data-toggle="closed">
+                <i class="fa-solid fa-bars fa-flip" style="color: #ffffff;"></i>
+            </div>
         </div>
 
     </div>

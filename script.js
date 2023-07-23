@@ -9,7 +9,7 @@ const websitesPrincipalDesc = document.querySelector('#websites #principal-desc'
 const presentationImage = document.querySelectorAll('#presentation .img');
 const presentationPrincipalDesc = document.querySelector('#presentation #principal-desc');
 
-
+const body = document.querySelector('body');
 const overlay = document.querySelector('#overlay');
 const overlayContent = document.querySelector('#overlay-content');
 const overlayBody = document.querySelector('#overlay-body');
@@ -18,6 +18,8 @@ const overlayContainer = document.querySelector('#overlay-container');
 const slideLinkRight = document.querySelectorAll('.slide-link-right');
 const slideLinkLeft = document.querySelectorAll('.slide-link-left');
 const articles = document.querySelectorAll('article');
+const menu = document.querySelector('.menu');
+const nav = document.querySelector('nav');
 
 function articleInteraction(images, descriptions, principalDesc) {
     for (let i = 0; i < images.length; i++) {
@@ -45,6 +47,7 @@ function articleInteraction(images, descriptions, principalDesc) {
 
             images[i].addEventListener('click', () => {
                 overlay.style.display = 'block';
+                body.style.overflow = 'hidden';
 
                 overlayContent.src = images[i].dataset.url;
                 console.log(images[i].dataset.url);
@@ -55,6 +58,7 @@ function articleInteraction(images, descriptions, principalDesc) {
         } else {
             images[i].addEventListener('click', () => {
                 overlay.style.display = 'block';
+                body.style.overflow = 'hidden';
 
                 overlayContent.src = images[i].dataset.url;
                 console.log(images[i].dataset.url);
@@ -71,6 +75,7 @@ articleInteraction(presentationImage, null, presentationPrincipalDesc);
 
 closeOverlay.addEventListener('click', () => {
     overlay.style.display = 'none';
+    body.style.overflow = 'auto';
 
 });
 
@@ -155,10 +160,10 @@ function displayTitle(currentSlide) {
     for (let title of titles) {
         title.style.display = 'none';
 
-        currentTitle.style = 'display: block; transform: scale(50%) translateY(200%);';
+        currentTitle.style = 'display: block; transform: scale(50%) translateX(-200%);';
 
         setTimeout(() => {
-            currentTitle.style = 'display: block; transform: scale(100%) translateY(0%);'
+            currentTitle.style = 'display: block; transform: scale(100%) translateX(0%);'
         })
 
     }
@@ -167,9 +172,43 @@ function displayTitle(currentSlide) {
 
 function displayBackground(currentSlide) {
 
-    const images = ['360_F_260473171_GMr0ghneGQFDpdACcQKhetHe3FX2AUCG.jpg', 'beautiful-northern-light-background-free-vector.jpg', 'beautiful-northern-lights-background-free-vector.jpg', 'images.jpg']
+    const images = ['llleaves.svg', 'ffflux.svg', 'ffflurry.svg', 'ffflux1.svg']
 
     document.getElementById('background').style = `background: url('./images/bg/${images[currentSlide - 1]}') center no-repeat; background-size: cover; transition: 4s; opacity: 0.1`;
 
     console.log(images)
 }
+
+
+// setTimeout(() => {
+//     nav.style = "max-height: 0px; transition: max-height 1s ease-in-out"
+// })
+
+menu.addEventListener('click', () => {
+    switch (menu.dataset.toggle) {
+        case 'closed':
+            nav.style.display = 'flex';
+            body.style.overflow = 'hidden';
+            // nav.style.width = '900px';
+            menu.dataset.toggle = 'opened';
+            break;
+        case 'opened':
+            nav.style.display = 'none';
+            body.style.overflow = 'auto';
+            // nav.style.width = '0px'; 
+            menu.dataset.toggle = 'closed';
+            break;
+        default:
+            nav.style.display = 'none'
+
+
+    }
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 800) {
+        nav.style.display = 'flex';
+    } else {
+        nav.style.display = 'none';
+    }
+})
