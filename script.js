@@ -174,7 +174,7 @@ function displayBackground(currentSlide) {
 
     const images = ['llleaves.svg', 'ffflux.svg', 'ffflurry.svg', 'ffflux1.svg']
 
-    document.getElementById('background').style = `background: url('./images/bg/${images[currentSlide - 1]}') center no-repeat; background-size: cover; transition: 4s; opacity: 0.1`;
+    document.getElementById('background').style = `background: url('./images/bg/${images[currentSlide - 1]}') center no-repeat; background-size: cover; transition: 1s ease-in-out; opacity: 0.1`;
 
     console.log(images)
 }
@@ -208,7 +208,9 @@ menu.addEventListener('click', () => {
 window.addEventListener('resize', () => {
     if (window.innerWidth > 800) {
         nav.style.display = 'flex';
+        body.style.overflow = 'hidden';
     } else {
         nav.style.display = 'none';
+        body.style.overflow = 'auto';
     }
 })
