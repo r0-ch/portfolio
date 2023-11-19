@@ -1,3 +1,4 @@
+
 const visualsImages = document.querySelectorAll('#visuals .img');
 const visualsDescriptions = document.querySelectorAll('#visuals .desc');
 const visualsPrincipalDesc = document.querySelector('#visuals #principal-desc');
@@ -17,9 +18,14 @@ const closeOverlay = document.querySelector('#close-overlay');
 const overlayContainer = document.querySelector('#overlay-container');
 const slideLinkRight = document.querySelectorAll('.slide-link-right');
 const slideLinkLeft = document.querySelectorAll('.slide-link-left');
+const articlesContainer = document.querySelector('#articles');
 const articles = document.querySelectorAll('article');
 const menu = document.querySelector('.menu');
 const nav = document.querySelector('nav');
+
+// Styling
+articlesContainer.style.width = articles.length * 100 + '%';
+
 
 function articleInteraction(images, descriptions, principalDesc) {
     for (let i = 0; i < images.length; i++) {
@@ -82,11 +88,10 @@ closeOverlay.addEventListener('click', () => {
 
 
 // slides
-
 let currentSlide = 1;
 
 function rightClick() {
-    if (currentSlide < 4) {
+    if (currentSlide < articles.length) {
 
         for (let i = 0; i < articles.length; i++) {
 
