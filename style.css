@@ -49,7 +49,7 @@ nav>.nav-section {
 }
 
 .nav-section a {
-    font-size: 1em;
+    font-size: 0.85em;
 }
 
 #nav-logo-section,
@@ -183,7 +183,7 @@ article .article-image-section:has(#fourth:hover) {
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     transform: translateY(25%);
     transition: all 400ms;
 }
@@ -197,6 +197,7 @@ article .article-image-section:has(#fourth:hover) {
     opacity: 1;
     margin-bottom: 1em;
     font-size: 1.5em;
+    font-style: italic;
     font-family: 'Russo One', sans-serif;
     text-shadow: 7px 4px 3px rgba(197, 197, 197, 0.705);
     transition: all 400ms;

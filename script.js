@@ -27,6 +27,9 @@ const menu = document.querySelector('.menu');
 const nav = document.querySelector('nav');
 const about = document.querySelector('#about');
 const work = document.querySelector('#work');
+const skills = document.querySelector('#skills');
+const contact = document.querySelector('#contact');
+
 
 // Styling
 articlesContainer.style.width = articles.length * 100 + '%';
@@ -112,6 +115,12 @@ let currentSlide = 1;
     })
     work.addEventListener('click', () => {
         rightClick(1)
+    })
+    skills.addEventListener('click', () => {
+        rightClick(2)
+    })
+    contact.addEventListener('click', () => {
+        rightClick(3)
     })
 
 function rightClick(slide) {
