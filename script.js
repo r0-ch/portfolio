@@ -72,7 +72,7 @@ function articleInteraction(images, descriptions, principalDesc) {
 
                 overlayContent.src = images[i].dataset.url;
                 console.log(images[i].dataset.url);
-                overlayBody.textContent = descriptions[i].textContent;
+                overlayBody.innerHTML = descriptions[i].innerHTML;
 
             })
 
