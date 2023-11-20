@@ -112,13 +112,13 @@ main article {
 
 /* article principal styling */
 
-article>.article-image-section {
+article .article-image-section {
     display: grid;
     transition: 400ms;
     cursor: pointer;
 }
 
-article>.article-image-section>.img {
+article .article-image-section>.img {
     width: 100%;
     height: 100%;
     background: center no-repeat;
@@ -126,12 +126,12 @@ article>.article-image-section>.img {
 }
 
 
-article>.article-image-section:hover>.img {
+article .article-image-section:hover>.img {
     opacity: 0.15;
     transition: 400ms;
 }
 
-article>.article-image-section:hover>.img:hover {
+article .article-image-section:hover>.img:hover {
     opacity: 1;
 }
 
@@ -140,40 +140,187 @@ article>.article-image-section:hover>.img:hover {
 
 /* section image grid*/
 
-#visuals>.article-image-section {
+article .article-image-section {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
 
-#visuals>.article-image-section:has(#first:hover) {
+article .article-image-section:has(#first:hover) {
     grid-template-columns: 1.5fr 0.5fr;
     grid-template-rows: 1.5fr 0.5fr;
 
 }
 
-#visuals>.article-image-section:has(#second:hover) {
+article .article-image-section:has(#second:hover) {
     grid-template-columns: 0.5fr 1.5fr;
     grid-template-rows: 1.5fr 0.5fr;
 
 }
 
-#visuals>.article-image-section:has(#third:hover) {
+article .article-image-section:has(#third:hover) {
     grid-template-columns: 1.5fr 0.5fr;
     grid-template-rows: 0.5fr 1.5fr;
 
 }
 
-#visuals>.article-image-section:has(#fourth:hover) {
+article .article-image-section:has(#fourth:hover) {
     grid-template-columns: 0.5fr 1.5fr;
     grid-template-rows: 0.5fr 1.5fr;
 
 }
 
+#skills {
+    display: block;
+}
+
+#skills .article-image-section .img {
+    padding: 2em;
+    border-right: var(--border-color) 1px solid;
+    border-bottom: var(--border-color) 1px solid;
+}
+
+#skills .article-image-section .img>div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(25%);
+    transition: all 400ms;
+}
+
+#skills .article-image-section .img:hover>div {
+    transform: translateY(-10%);
+    transition: all 400ms;
+}
+
+#skills .article-image-section h3 {
+    opacity: 1;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-family: 'Russo One', sans-serif;
+    text-shadow: 7px 4px 3px rgba(197, 197, 197, 0.705);
+    transition: all 400ms;
+}
+
+#skills .article-image-section .img:hover h3 {
+    opacity: 0;
+    transition: all 400ms;
+}
+
+#skills .article-image-section i {
+    font-size: 2em;
+}
+
+#skills .progress-bar {
+    margin: 2em auto 0;
+    border-radius: 1em;
+    background-color: aliceblue;
+    width: 1em;
+    height: 0;
+    transition: all 400ms;
+}
 
 
+#skills .article-image-section .img:hover .progress-bar {
+    transition: all 400ms;
+}
 
+#skills .article-image-section .img:hover .html {
+    height: 20em;
+}
 
+#skills .article-image-section .img:hover .css {
+    height: 18em;
+}
 
+#skills .article-image-section .img:hover .js {
+    height: 16em;
+}
+
+#skills .article-image-section .img:hover .ts {
+    height: 16.8em;
+}
+
+#skills .article-image-section .img:hover .php {
+    height: 13em;
+}
+
+#skills .article-image-section .img:hover .python {
+    height: 10em;
+}
+
+#skills .article-image-section .img:hover .c {
+    height: 11.5em;
+}
+
+#skills .article-image-section .img:hover .node {
+    height: 19em;
+}
+
+#skills .article-image-section .img:hover .express {
+    height: 17em;
+}
+
+#skills .article-image-section .img:hover .react {
+    height: 16em;
+}
+
+#skills .article-image-section .img:hover .angular {
+    height: 14em;
+}
+
+#skills .article-image-section .img:hover .symfony {
+    height: 15em;
+}
+
+#skills .article-image-section .img:hover .laravel {
+    height: 14em;
+}
+
+#skills .article-image-section .img:hover .django {
+    height: 9em;
+}
+
+#skills .article-image-section #second>div, #skills .article-image-section #third>div {
+    justify-content: space-evenly;
+}
+
+#skills .article-image-section #second, #skills .article-image-section #third {
+    position: relative;
+}
+
+#skills .article-image-section #second>div, #skills .article-image-section #third>div {
+    /* transform: translateY(100%); */
+    position: absolute;
+    top: 40%;
+    left: 0;
+    height: auto;
+    transition: all 400ms;
+}
+
+#skills .article-image-section #second>div i, #skills .article-image-section #third>div i {
+    font-size: 3em;
+    transition: all 400ms;
+}
+
+#skills .article-image-section #second:hover i, #skills .article-image-section #third:hover i {
+    font-size: 5em;
+    transition: all 400ms;
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    animation: rotating 3s linear infinite;
+}
 
 /* section image background */
 
@@ -195,26 +342,7 @@ article>.article-image-section:hover>.img:hover {
 
 /* websites */
 
-#websites>.article-image-section {
-    grid-template-columns: 1fr 1fr;
-}
 
-#websites>.article-image-section:has(#first-website:hover) {
-    grid-template-columns: 1.5fr 0.5fr;
-}
-
-#websites>.article-image-section:has(#second-website:hover) {
-    grid-template-columns: 0.5fr 1.5fr;
-}
-
-
-#websites>.article-image-section>.img:nth-child(1) {
-    background-image: url(./images/image.jpg);
-}
-
-#websites>.article-image-section>.img:nth-child(2) {
-    background-image: url(./images/Compo2D_Photo_Rosny_CHUM.jpg);
-}
 
 
 
