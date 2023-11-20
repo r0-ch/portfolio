@@ -14,6 +14,9 @@ const body = document.querySelector('body');
 const overlay = document.querySelector('#overlay');
 const overlayContent = document.querySelector('#overlay-content');
 const overlayBody = document.querySelector('#overlay-body');
+const overlayLeft = document.querySelector('#overlay #left');
+const overlayRight = document.querySelector('#overlay #right');
+
 const closeOverlay = document.querySelector('#close-overlay');
 const overlayContainer = document.querySelector('#overlay-container');
 const slideLinkRight = document.querySelectorAll('.slide-link-right');
@@ -22,9 +25,21 @@ const articlesContainer = document.querySelector('#articles');
 const articles = document.querySelectorAll('article');
 const menu = document.querySelector('.menu');
 const nav = document.querySelector('nav');
+const about = document.querySelector('#about');
+const work = document.querySelector('#work');
 
 // Styling
 articlesContainer.style.width = articles.length * 100 + '%';
+
+visualsImages.forEach((img, key) => {
+    key+=1;
+    img.style.backgroundImage = `url(./images/projects/${key}.png`;
+    img.dataset.url = `./images/projects/${key}/1.png`;
+    
+});
+
+
+
 
 
 function articleInteraction(images, descriptions, principalDesc) {
@@ -90,7 +105,19 @@ closeOverlay.addEventListener('click', () => {
 // slides
 let currentSlide = 1;
 
-function rightClick() {
+// nav links
+
+    about.addEventListener('click', () => {
+        leftClick(2);
+    })
+    work.addEventListener('click', () => {
+        rightClick(1)
+    })
+
+function rightClick(slide) {
+    if (slide) {
+        currentSlide = slide;
+    }
     if (currentSlide < articles.length) {
 
         for (let i = 0; i < articles.length; i++) {
@@ -123,7 +150,10 @@ function rightClick() {
 
 
 
-function leftClick() {
+function leftClick(slide) {
+    if (slide) {
+        currentSlide = slide;
+    }
     if (currentSlide > 1) {
 
         for (let i = 0; i < articles.length; i++) {

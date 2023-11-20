@@ -19,12 +19,8 @@ body {
     background-color: var(--background-color);
     display: flex;
     flex-direction: column;
-    /* height: 100vh; */
     overflow: hidden;
     position: relative;
-    /* z-index: 1; */
-
-
 }
 
 .link:hover {
@@ -64,7 +60,6 @@ nav>.nav-section {
 }
 
 #nav-logo-section {
-    /* flex-shrink: 4; */
     justify-content: flex-start;
 }
 
@@ -74,10 +69,6 @@ nav>.nav-section {
     font-size: 2em;
 }
 
-/* #nav-logo-section>a>i {
-    font-size: 2.5rem;
-} */
-
 #nav-link-section {
     gap: 4rem;
 }
@@ -85,12 +76,6 @@ nav>.nav-section {
 #nav-social-section {
     gap: 3rem;
 }
-
-/* #nav-contact-section {
-    flex-shrink: 3;
-
-} */
-
 
 
 
@@ -102,24 +87,26 @@ main {
 
 #articles {
     display: flex;
-    /* width: 300%; */
     height: 100%;
 
 }
 
 main article {
-    /* height: 100%; */
     width: 100%;
     display: flex;
     transition: 1s;
 
 }
 
+
+#presentation p {
+    padding: 3em;
+    line-height: 1.5em;
+}
+
 .article-image-section {
-    /* display: block; */
     height: 100%;
     flex-basis: 70%;
-    /* flex-shrink: 1; */
     border-right: var(--border-color) solid 1px;
 }
 
@@ -129,7 +116,6 @@ article>.article-image-section {
     display: grid;
     transition: 400ms;
     cursor: pointer;
-    /* overflow: hidden; */
 }
 
 article>.article-image-section>.img {
@@ -150,14 +136,9 @@ article>.article-image-section:hover>.img:hover {
 }
 
 
-/* presentation */
 
-#presentation>.article-image-section>.img:nth-child(1) {
-    background-image: url(./images/rosny.jpg);
-}
 
 /* section image grid*/
-
 
 #visuals>.article-image-section {
     grid-template-columns: 1fr 1fr;
@@ -196,9 +177,7 @@ article>.article-image-section:hover>.img:hover {
 
 /* section image background */
 
-
-
-#visuals>.article-image-section>.img:nth-child(1) {
+/* #visuals>.article-image-section>.img:nth-child(1) {
     background-image: url(./images/image.jpg);
 }
 
@@ -212,7 +191,7 @@ article>.article-image-section:hover>.img:hover {
 
 #visuals>.article-image-section>.img:nth-child(4) {
     background-image: url(./images/IMG_0364.JPG);
-}
+} */
 
 /* websites */
 
@@ -397,7 +376,7 @@ h2[data-title="4"] {
 
 }
 
-#overlay i {
+#close-overlay {
     position: fixed;
     top: 20px;
     right: 20px;
