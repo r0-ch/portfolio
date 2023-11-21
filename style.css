@@ -92,7 +92,7 @@ main {
 }
 
 main article {
-    width: 100%;
+    width: 100vw;
     display: flex;
     transition: 1s;
 
@@ -440,8 +440,9 @@ article .article-image-section:has(#fourth:hover) {
 /* form */
 form {
     margin: 2em auto;
-    height: 480px;
-    width: 650px;
+    height: 60vh;
+    width: 65vw;
+    max-width: 650px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -810,5 +811,19 @@ a:not(#logo):hover::before {
     .all-desc {
         overflow-y: hidden;
         height: 100%;
+    }
+
+    #skills .article-image-section {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    #skills .article-image-section .img {
+        height: 25%;
+    }
+
+    #skills .article-image-section .img:hover .bar {
+        height: 8em;
     }
 }
