@@ -212,74 +212,84 @@ article .article-image-section:has(#fourth:hover) {
     font-size: 2em;
 }
 
-#skills .progress-bar {
+#skills .bar {
     margin: 2em auto 0;
+    height: 0;
+    width: 0;
+    border: solid aliceblue 2px;
+    border-radius: 1em;
+}
+
+#skills .article-image-section .img:hover .bar {
+    height: 10em;
+    width: 1em;
+}
+
+#skills .progress-bar {
     border-radius: 1em;
     background-color: aliceblue;
-    width: 1em;
     height: 0;
     transition: all 400ms;
 }
-
 
 #skills .article-image-section .img:hover .progress-bar {
     transition: all 400ms;
 }
 
 #skills .article-image-section .img:hover .html {
-    height: 20em;
+    height: 90%;
 }
 
 #skills .article-image-section .img:hover .css {
-    height: 18em;
+    height: 80%;
 }
 
 #skills .article-image-section .img:hover .js {
-    height: 16em;
+    height: 75%;
 }
 
 #skills .article-image-section .img:hover .ts {
-    height: 16.8em;
+    height: 70%;
 }
 
 #skills .article-image-section .img:hover .php {
-    height: 13em;
+    height: 60%;
 }
 
 #skills .article-image-section .img:hover .python {
-    height: 10em;
+    height: 40%;
 }
 
 #skills .article-image-section .img:hover .c {
-    height: 11.5em;
+    height: 55%;
 }
 
 #skills .article-image-section .img:hover .node {
-    height: 19em;
+    height: 85%;
 }
 
 #skills .article-image-section .img:hover .express {
-    height: 17em;
+    height: 80%;
 }
 
 #skills .article-image-section .img:hover .react {
-    height: 16em;
+    height: 70%;
 }
 
 #skills .article-image-section .img:hover .angular {
-    height: 14em;
+    height: 60%;
 }
 
 #skills .article-image-section .img:hover .symfony {
-    height: 15em;
+    height: 65%;
 }
 
 #skills .article-image-section .img:hover .laravel {
-    height: 14em;
+    height: 50%;
 }
 
 #skills .article-image-section .img:hover .django {
-    height: 9em;
+    height: 40%;
 }
 
 #skills .article-image-section #second>div,
@@ -445,11 +455,15 @@ form {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-form h4, form span {
+form h4,
+form span {
     text-align: center;
 }
 
-form h4, form label, form button, form span {
+form h4,
+form label,
+form button,
+form span {
     font-family: 'Russo One', sans-serif;
     font-style: italic;
 }
@@ -473,6 +487,18 @@ textarea {
 
 label {
     margin-bottom: 1.75em;
+}
+
+form button {
+    opacity: 0.5;
+    transition: all 400ms;
+}
+
+form button:hover {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 15%, rgba(121, 9, 115, 0.8351934523809523) 64%, rgba(0, 212, 255, 0.8379945728291316) 100%, rgba(0, 0, 0, 1) 100%);
+    opacity: 1;
+    transition: all 400ms;
 }
 
 
