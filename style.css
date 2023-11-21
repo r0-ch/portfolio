@@ -282,15 +282,18 @@ article .article-image-section:has(#fourth:hover) {
     height: 9em;
 }
 
-#skills .article-image-section #second>div, #skills .article-image-section #third>div {
+#skills .article-image-section #second>div,
+#skills .article-image-section #third>div {
     justify-content: space-evenly;
 }
 
-#skills .article-image-section #second, #skills .article-image-section #third {
+#skills .article-image-section #second,
+#skills .article-image-section #third {
     position: relative;
 }
 
-#skills .article-image-section #second>div, #skills .article-image-section #third>div {
+#skills .article-image-section #second>div,
+#skills .article-image-section #third>div {
     /* transform: translateY(100%); */
     position: absolute;
     top: 40%;
@@ -299,12 +302,14 @@ article .article-image-section:has(#fourth:hover) {
     transition: all 400ms;
 }
 
-#skills .article-image-section #second>div i, #skills .article-image-section #third>div i {
+#skills .article-image-section #second>div i,
+#skills .article-image-section #third>div i {
     font-size: 3em;
     transition: all 400ms;
 }
 
-#skills .article-image-section #second:hover i, #skills .article-image-section #third:hover i {
+#skills .article-image-section #second:hover i,
+#skills .article-image-section #third:hover i {
     font-size: 5em;
     transition: all 400ms;
 }
@@ -421,6 +426,55 @@ article .article-image-section:has(#fourth:hover) {
 
 
 }
+
+/* form */
+form {
+    margin: 2em auto;
+    height: 480px;
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5em;
+    padding: 2em;
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+form h4, form span {
+    text-align: center;
+}
+
+form h4, form label, form button, form span {
+    font-family: 'Russo One', sans-serif;
+    font-style: italic;
+}
+
+
+form input,
+form textarea,
+button {
+    background: var(--background-color);
+    color: white;
+    padding: 1em;
+    border-radius: 1em;
+    width: 100%;
+}
+
+label,
+input,
+textarea {
+    display: block;
+}
+
+label {
+    margin-bottom: 1.75em;
+}
+
 
 
 /* bottom styling */
