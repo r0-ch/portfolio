@@ -59,7 +59,7 @@ projectPage2.forEach((img, key) => {
     img.style.backgroundImage = `url(./images/projects/${key}.png`;
     img.dataset.url = `./images/projects/${key}/1.png`;
     
-});
+}); 
 
 
 
