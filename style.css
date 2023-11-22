@@ -145,25 +145,25 @@ article .article-image-section {
     grid-template-rows: 1fr 1fr;
 }
 
-article .article-image-section:has(#first:hover) {
+article .article-image-section:has(.first:hover) {
     grid-template-columns: 1.5fr 0.5fr;
     grid-template-rows: 1.5fr 0.5fr;
 
 }
 
-article .article-image-section:has(#second:hover) {
+article .article-image-section:has(.second:hover) {
     grid-template-columns: 0.5fr 1.5fr;
     grid-template-rows: 1.5fr 0.5fr;
 
 }
 
-article .article-image-section:has(#third:hover) {
+article .article-image-section:has(.third:hover) {
     grid-template-columns: 1.5fr 0.5fr;
     grid-template-rows: 0.5fr 1.5fr;
 
 }
 
-article .article-image-section:has(#fourth:hover) {
+article .article-image-section:has(.fourth:hover) {
     grid-template-columns: 0.5fr 1.5fr;
     grid-template-rows: 0.5fr 1.5fr;
 

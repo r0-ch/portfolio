@@ -1,14 +1,27 @@
 
-const visualsImages = document.querySelectorAll('#visuals .img');
-const visualsDescriptions = document.querySelectorAll('#visuals .desc');
-const visualsPrincipalDesc = document.querySelector('#visuals #principal-desc');
+const projectPage1 = document.querySelectorAll('#project1 .img');
+const projectPage2 = document.querySelectorAll('#project2 .img');
+const projectPage1Descriptions = document.querySelectorAll('#project1 .desc');
+const projectPage2Descriptions = document.querySelectorAll('#project2 .desc');
+const projectPage1PrincipalDesc = document.querySelector('#project1 .principal-desc');
+const projectPage2PrincipalDesc = document.querySelector('#project2 .principal-desc');
+
+console.log(projectPage1Descriptions);
+console.log(projectPage2Descriptions);
+
+
+
+
+const projectsDescriptions = document.querySelectorAll('.projects .desc');
+const projectsPrincipalDesc = document.querySelector('.projects .principal-desc');
+
 
 const websitesImages = document.querySelectorAll('#websites .img');
 const websitesDescriptions = document.querySelectorAll('#websites .desc');
-const websitesPrincipalDesc = document.querySelector('#websites #principal-desc');
+const websitesPrincipalDesc = document.querySelector('#websites .principal-desc');
 
 const presentationImage = document.querySelectorAll('#presentation .img');
-const presentationPrincipalDesc = document.querySelector('#presentation #principal-desc');
+const presentationPrincipalDesc = document.querySelector('#presentation .principal-desc');
 
 const body = document.querySelector('body');
 const overlay = document.querySelector('#overlay');
@@ -34,13 +47,19 @@ const contact = document.querySelector('#contact');
 // Styling
 articlesContainer.style.width = articles.length * 100 + '%';
 
-visualsImages.forEach((img, key) => {
+projectPage1.forEach((img, key) => {
     key+=1;
     img.style.backgroundImage = `url(./images/projects/${key}.png`;
     img.dataset.url = `./images/projects/${key}/1.png`;
     
 });
 
+projectPage2.forEach((img, key) => {
+    key+=1;
+    img.style.backgroundImage = `url(./images/projects/${key}.png`;
+    img.dataset.url = `./images/projects/${key}/1.png`;
+    
+});
 
 
 
@@ -93,8 +112,8 @@ function articleInteraction(images, descriptions, principalDesc) {
     }
 }
 
-articleInteraction(visualsImages, visualsDescriptions, visualsPrincipalDesc);
-articleInteraction(websitesImages, websitesDescriptions, websitesPrincipalDesc);
+articleInteraction(projectPage1, projectPage1Descriptions, projectPage1PrincipalDesc);
+articleInteraction(projectPage2, projectPage2Descriptions, projectPage2PrincipalDesc);
 articleInteraction(presentationImage, null, presentationPrincipalDesc);
 
 closeOverlay.addEventListener('click', () => {
@@ -117,10 +136,10 @@ let currentSlide = 1;
         rightClick(1)
     })
     skills.addEventListener('click', () => {
-        rightClick(2)
+        rightClick(3)
     })
     contact.addEventListener('click', () => {
-        rightClick(3)
+        rightClick(4)
     })
 
 function rightClick(slide) {
