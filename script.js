@@ -50,14 +50,14 @@ articlesContainer.style.width = articles.length * 100 + '%';
 projectPage1.forEach((img, key) => {
     key+=1;
     img.style.backgroundImage = `url(./images/projects/${key}.png`;
-    img.dataset.url = `./images/projects/${key}/1.png`;
+    img.dataset.url = `./images/projects/${key}.png`;
     
 });
 
 projectPage2.forEach((img, key) => {
     key+=1;
     img.style.backgroundImage = `url(./images/projects/${key}.png`;
-    img.dataset.url = `./images/projects/${key}/1.png`;
+    img.dataset.url = `./images/projects/${key}.png`;
     
 }); 
 
@@ -136,10 +136,10 @@ let currentSlide = 1;
         rightClick(1)
     })
     skills.addEventListener('click', () => {
-        rightClick(3)
+        rightClick(2)
     })
     contact.addEventListener('click', () => {
-        rightClick(4)
+        rightClick(3)
     })
 
 function rightClick(slide) {

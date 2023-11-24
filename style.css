@@ -292,18 +292,18 @@ article .article-image-section:has(.fourth:hover) {
     height: 40%;
 }
 
-#skills .article-image-section #second>div,
-#skills .article-image-section #third>div {
+#skills .article-image-section .second>div,
+#skills .article-image-section .third>div {
     justify-content: space-evenly;
 }
 
-#skills .article-image-section #second,
-#skills .article-image-section #third {
+#skills .article-image-section .second,
+#skills .article-image-section .third {
     position: relative;
 }
 
-#skills .article-image-section #second>div,
-#skills .article-image-section #third>div {
+#skills .article-image-section .second>div,
+#skills .article-image-section .third>div {
     /* transform: translateY(100%); */
     position: absolute;
     top: 40%;
@@ -312,14 +312,14 @@ article .article-image-section:has(.fourth:hover) {
     transition: all 400ms;
 }
 
-#skills .article-image-section #second>div i,
-#skills .article-image-section #third>div i {
+#skills .article-image-section .second>div i,
+#skills .article-image-section .third>div i {
     font-size: 3em;
     transition: all 400ms;
 }
 
-#skills .article-image-section #second:hover i,
-#skills .article-image-section #third:hover i {
+#skills .article-image-section .second:hover i,
+#skills .article-image-section .third:hover i {
     font-size: 5em;
     transition: all 400ms;
 }
