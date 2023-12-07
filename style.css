@@ -21,11 +21,13 @@ body {
     flex-direction: column;
     overflow: hidden;
     position: relative;
+    /* cursor: url(./images/cursor.png) 0 0, auto; */
 }
 
 .link:hover {
     color: rgba(255, 255, 255, 0.4);
     font-style: oblique;
+    /* cursor: url(./images/cursor.png) 0 0, auto; */
 }
 
 a {
@@ -218,11 +220,13 @@ article .article-image-section:has(.fourth:hover) {
     width: 0;
     border: solid aliceblue 2px;
     border-radius: 1em;
+    transition: all 250ms;
 }
 
 #skills .article-image-section .img:hover .bar {
     height: 10em;
     width: 1em;
+    transition: all 250ms;
 }
 
 #skills .progress-bar {
@@ -375,8 +379,15 @@ article .article-image-section:has(.fourth:hover) {
     flex-direction: column;
     font-size: 1em;
     text-align: left;
+    padding: 2em;
 
 
+}
+
+.article-description-section .indent, .overlay-body .indent {
+    margin-left: 1em;
+    margin-top: 1em;
+    line-height: 1.4em;
 }
 
 .article-description-section p {
@@ -424,7 +435,7 @@ article .article-image-section:has(.fourth:hover) {
 
 .article-description-section div p {
 
-    padding: 2em;
+    /* padding: 2em; */
     /* margin: 0; */
 
 
@@ -576,7 +587,7 @@ h2[data-title="4"] {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     /* Black background with opacity */
     z-index: 2;
     /* Specify a stack order in case you're using a different order for other elements */
@@ -615,7 +626,7 @@ h2[data-title="4"] {
 
 }
 
-#overlay-body {
+.overlay-body {
     background: black;
     font-size: 1em;
     padding: 1em;
@@ -825,5 +836,16 @@ a:not(#logo):hover::before {
 
     #skills .article-image-section .img:hover .bar {
         height: 8em;
+    }
+
+    .overlay-images {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .overlay-images img {
+        width: 250px !important;
+        height: 175px !important;
+
     }
 }

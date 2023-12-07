@@ -49,16 +49,13 @@ articlesContainer.style.width = articles.length * 100 + '%';
 
 projectPage1.forEach((img, key) => {
     key+=1;
-    img.style.backgroundImage = `url(./images/projects/${key}.png`;
-    img.dataset.url = `./images/projects/${key}.png`;
-    
+
+    img.style.backgroundImage = `url(./images/projects/${key}/1.png`;
 });
 
 projectPage2.forEach((img, key) => {
     key+=1;
-    img.style.backgroundImage = `url(./images/projects/${key}.png`;
-    img.dataset.url = `./images/projects/${key}.png`;
-    
+    img.style.backgroundImage = `url(./images/projects/${key}/1.png`;
 }); 
 
 
@@ -92,9 +89,27 @@ function articleInteraction(images, descriptions, principalDesc) {
                 overlay.style.display = 'block';
                 body.style.overflow = 'hidden';
 
-                overlayContent.src = images[i].dataset.url;
-                console.log(images[i].dataset.url);
+                overlayContainer.innerHTML = "";
+                let imagesContainer = document.createElement("div");
+                // imagesContainer.style = "width: 80%; heigth: 40%";
+                imagesContainer.classList.add("overlay-images");
+                imagesContainer.style.display = "grid";
+                imagesContainer.style.gap = "1em";
+                imagesContainer.style.gridTemplateColumns = "1fr 1fr";
+                imagesContainer.style.gridTemplateRows = "1fr 1fr";
+                for(let j = 0; j < 4; j++) {
+                    let image = document.createElement("img");
+                    image.style = "width: 400px; heigth: 275px; object-fit: cover";
+                    image.src = `./images/projects/${i+1}/${j+1}.png`;
+                    imagesContainer.appendChild(image);
+                }
+                overlayContainer.appendChild(imagesContainer);
+                // overlayContent.src = images[i].dataset.url;
+                // console.log(images[i].dataset.url);
+                let overlayBody = document.createElement("p");
                 overlayBody.innerHTML = descriptions[i].innerHTML;
+                overlayBody.classList.add("overlay-body");
+                overlayContainer.appendChild(overlayBody);
 
             })
 
