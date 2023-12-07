@@ -6,11 +6,6 @@ const projectPage2Descriptions = document.querySelectorAll('#project2 .desc');
 const projectPage1PrincipalDesc = document.querySelector('#project1 .principal-desc');
 const projectPage2PrincipalDesc = document.querySelector('#project2 .principal-desc');
 
-console.log(projectPage1Descriptions);
-console.log(projectPage2Descriptions);
-
-
-
 
 const projectsDescriptions = document.querySelectorAll('.projects .desc');
 const projectsPrincipalDesc = document.querySelector('.projects .principal-desc');
@@ -48,15 +43,16 @@ const contact = document.querySelector('#contact');
 articlesContainer.style.width = articles.length * 100 + '%';
 
 projectPage1.forEach((img, key) => {
-    key+=1;
+    key += 1;
 
     img.style.backgroundImage = `url(./images/projects/${key}/1.png`;
 });
 
-projectPage2.forEach((img, key) => {
-    key+=1;
+let key = 5;
+projectPage2.forEach((img) => {
     img.style.backgroundImage = `url(./images/projects/${key}/1.png`;
-}); 
+    key++;
+});
 
 
 
@@ -67,6 +63,7 @@ function articleInteraction(images, descriptions, principalDesc) {
         if (descriptions) {
 
             images[i].addEventListener('mouseover', () => {
+
                 descriptions[i].style.display = 'block';
                 principalDesc.style.display = 'none';
 
@@ -77,6 +74,7 @@ function articleInteraction(images, descriptions, principalDesc) {
 
             });
             images[i].addEventListener('mouseout', () => {
+
                 descriptions[i].style.display = 'none';
                 principalDesc.style.display = 'block';
 
@@ -97,10 +95,14 @@ function articleInteraction(images, descriptions, principalDesc) {
                 imagesContainer.style.gap = "1em";
                 imagesContainer.style.gridTemplateColumns = "1fr 1fr";
                 imagesContainer.style.gridTemplateRows = "1fr 1fr";
-                for(let j = 0; j < 4; j++) {
+                for (let j = 0; j < 4; j++) {
                     let image = document.createElement("img");
                     image.style = "width: 400px; heigth: 275px; object-fit: cover";
-                    image.src = `./images/projects/${i+1}/${j+1}.png`;
+                    if (currentSlide == 3) {
+                        image.src = `./images/projects/${i+5}/${j + 1}.png`;
+                    } else {
+                        image.src = `./images/projects/${i + 1}/${j + 1}.png`;
+                    }
                     imagesContainer.appendChild(image);
                 }
                 overlayContainer.appendChild(imagesContainer);
@@ -119,7 +121,6 @@ function articleInteraction(images, descriptions, principalDesc) {
                 body.style.overflow = 'hidden';
 
                 overlayContent.src = images[i].dataset.url;
-                console.log(images[i].dataset.url);
                 overlayBody.textContent = principalDesc.textContent;
 
             })
@@ -129,7 +130,7 @@ function articleInteraction(images, descriptions, principalDesc) {
 
 articleInteraction(projectPage1, projectPage1Descriptions, projectPage1PrincipalDesc);
 articleInteraction(projectPage2, projectPage2Descriptions, projectPage2PrincipalDesc);
-articleInteraction(presentationImage, null, presentationPrincipalDesc);
+// articleInteraction(presentationImage, null, presentationPrincipalDesc);
 
 closeOverlay.addEventListener('click', () => {
     overlay.style.display = 'none';
@@ -144,18 +145,18 @@ let currentSlide = 1;
 
 // nav links
 
-    about.addEventListener('click', () => {
-        leftClick(2);
-    })
-    work.addEventListener('click', () => {
-        rightClick(1)
-    })
-    skills.addEventListener('click', () => {
-        rightClick(2)
-    })
-    contact.addEventListener('click', () => {
-        rightClick(3)
-    })
+about.addEventListener('click', () => {
+    leftClick(2);
+})
+work.addEventListener('click', () => {
+    rightClick(1)
+})
+skills.addEventListener('click', () => {
+    rightClick(3)
+})
+contact.addEventListener('click', () => {
+    rightClick(4)
+})
 
 function rightClick(slide) {
     if (slide) {
@@ -184,7 +185,6 @@ function rightClick(slide) {
 
     }
 
-    console.log(currentSlide);
 
     displayTitle(currentSlide);
     displayBackground(currentSlide);
@@ -221,7 +221,6 @@ function leftClick(slide) {
 
     }
 
-    console.log(currentSlide);
 
     displayTitle(currentSlide);
     displayBackground(currentSlide);
@@ -248,13 +247,13 @@ function displayTitle(currentSlide) {
 
 }
 
+
 function displayBackground(currentSlide) {
 
-    const images = ['llleaves.svg', 'ffflux.svg', 'ffflurry.svg', 'ffflux1.svg']
+    const images = ['llleaves.svg', 'ffflux.svg', 'ffflurry.svg', 'ffflux1.svg', 'ffflux.svg']
 
     document.getElementById('background').style = `background: url('./images/bg/${images[currentSlide - 1]}') center no-repeat; background-size: cover; transition: 1s ease-in-out; opacity: 0.1`;
 
-    console.log(images)
 }
 
 

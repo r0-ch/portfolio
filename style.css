@@ -106,6 +106,14 @@ main article {
     line-height: 1.5em;
 }
 
+.intro1 {
+    text-indent: 5em;
+}
+
+.intro2 {
+    text-align: center;
+}
+
 .article-image-section {
     height: 100%;
     flex-basis: 70%;
@@ -168,6 +176,23 @@ article .article-image-section:has(.third:hover) {
 article .article-image-section:has(.fourth:hover) {
     grid-template-columns: 0.5fr 1.5fr;
     grid-template-rows: 0.5fr 1.5fr;
+
+}
+
+#project2 .article-image-section {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+#project2 .article-image-section:has(.first:hover) {
+    grid-template-columns: 1.5fr 0.5fr;
+    grid-template-rows: 1fr;
+
+}
+
+#project2 .article-image-section:has(.second:hover) {
+    grid-template-columns: 0.5fr 1.5fr;
+    grid-template-rows: 1fr;
 
 }
 
@@ -550,7 +575,8 @@ form button:hover {
 
 h2[data-title="2"],
 h2[data-title="3"],
-h2[data-title="4"] {
+h2[data-title="4"],
+h2[data-title="5"] {
     display: none;
 }
 
