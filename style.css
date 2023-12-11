@@ -409,7 +409,8 @@ article .article-image-section:has(.fourth:hover) {
 
 }
 
-.article-description-section .indent, .overlay-body .indent {
+.article-description-section .indent,
+.overlay-body .indent {
     margin-left: 1em;
     margin-top: 1em;
     line-height: 1.4em;
@@ -429,6 +430,7 @@ article .article-image-section:has(.fourth:hover) {
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
+    height: 8px;
 }
 
 /* Track */
@@ -438,7 +440,7 @@ article .article-image-section:has(.fourth:hover) {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: rgba(129, 219, 255, 0.64);
 }
 
 /* Handle on hover */
@@ -634,7 +636,7 @@ h2[data-title="5"] {
 #overlay-container {
     padding: 2em;
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
     /* height: 100%; */
     display: flex;
     flex-direction: column;
@@ -654,9 +656,31 @@ h2[data-title="5"] {
 
 .overlay-body {
     background: black;
-    font-size: 1em;
-    padding: 1em;
+    font-size: 1.25em;
+    padding: 3em;
     font-family: 'Chakra Petch', sans-serif;
+    width: 70%;
+    margin: 0 auto;
+
+}
+
+.overlay-images {
+    width: 400%;
+}
+
+.overlay-images img{
+    display: inline;
+    width: 25%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.images-slider {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 90%;
+    aspect-ratio: 16/9;
+    margin: 0 auto;
 }
 
 /* links styling */
@@ -864,14 +888,8 @@ a:not(#logo):hover::before {
         height: 8em;
     }
 
-    .overlay-images {
-        display: flex !important;
-        flex-direction: column;
+    .overlay-body {
+        font-size: 0.75em;
     }
 
-    .overlay-images img {
-        width: 250px !important;
-        height: 175px !important;
-
-    }
 }

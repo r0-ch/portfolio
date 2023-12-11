@@ -88,16 +88,18 @@ function articleInteraction(images, descriptions, principalDesc) {
                 body.style.overflow = 'hidden';
 
                 overlayContainer.innerHTML = "";
+                let imagesSlider = document.createElement("div");
+                imagesSlider.classList.add("images-slider");
+                overlayContainer.appendChild(imagesSlider);
                 let imagesContainer = document.createElement("div");
-                // imagesContainer.style = "width: 80%; heigth: 40%";
                 imagesContainer.classList.add("overlay-images");
-                imagesContainer.style.display = "grid";
-                imagesContainer.style.gap = "1em";
-                imagesContainer.style.gridTemplateColumns = "1fr 1fr";
-                imagesContainer.style.gridTemplateRows = "1fr 1fr";
+                // imagesContainer.style.display = "grid";
+                // imagesContainer.style.gap = "1em";
+                // imagesContainer.style.gridTemplateColumns = "1fr 1fr";
+                // imagesContainer.style.gridTemplateRows = "1fr 1fr";
                 for (let j = 0; j < 4; j++) {
                     let image = document.createElement("img");
-                    image.style = "width: 400px; heigth: 275px; object-fit: cover";
+                    // image.style = "width: 100%; height: 100%; object-fit: cover";
                     if (currentSlide == 3) {
                         image.src = `./images/projects/${i+5}/${j + 1}.png`;
                     } else {
@@ -105,7 +107,7 @@ function articleInteraction(images, descriptions, principalDesc) {
                     }
                     imagesContainer.appendChild(image);
                 }
-                overlayContainer.appendChild(imagesContainer);
+                imagesSlider.appendChild(imagesContainer);
                 // overlayContent.src = images[i].dataset.url;
                 // console.log(images[i].dataset.url);
                 let overlayBody = document.createElement("p");
